@@ -5,7 +5,7 @@ class Human {
     this.name = name;
     this.age = age;
   }
-  showMeInfoHuman() {
+  show() {
     console.log(`Name ${this.name}, age ${this.age}`);
   }
 }
@@ -27,33 +27,36 @@ class Automobile {
     }
   }
   showInfoAtCarAndOwner() {
-    console.log(  `Car: ${this.model}, ${this.name}, ${this.year}, ${this.number}`
-    );
+    console.log(
+      `Car: ${this.model}, ${this.name}, ${this.year}, ${this.number}`)
     if (this.owner) {
       console.log(`Owner information`);
-      this.owner.showInfoAtCarAndOwner();
+      this.owner.show();
     } else {
-      console.log(`Owner in not defined`);
+      console.log(`Owner in not defined .`);
     }
   }
 }
 
-const Egor = new Human("Egor", 20);
+const egor = new Human("Egor", 20);
 
-const Nikita = new Human("Nikita", 20);
+const nikita = new Human("Nikita", 20);
 
-const Max = new Human("Max", 17);
+const max = new Human("Max", 17);
 
-const Automobile1 = new Automobile("Logan", "Reno", "2000", 2456);
-const Automobile2 = new Automobile("Honda", "Dio", "2012", 2756);
-const Automobile3 = new Automobile("Toyota", "Tucson", "2009", 2896);
+const automobile1 = new Automobile("Logan", "Reno", "2000", 2456);
+const automobile2 = new Automobile("Honda", "Dio", "2012", 2756);
+const automobile3 = new Automobile("Toyota", "Tucson", "2009", 2896);
 
-Automobile1.addOwner(Nikita);
-console.log(Automobile1);
+automobile1.addOwner(nikita);
+console.log(automobile1);
 
-Automobile2.addOwner(Egor);
-console.log(Automobile2);
+automobile2.addOwner(egor);
+console.log(automobile2);
 
-Automobile3.addOwner(Max);
-console.log(Automobile3);
+automobile3.addOwner(max);
+console.log(automobile3);
 
+automobile2.showInfoAtCarAndOwner();
+automobile1.showInfoAtCarAndOwner();
+automobile3.showInfoAtCarAndOwner();
